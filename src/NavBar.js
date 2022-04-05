@@ -1,5 +1,6 @@
-import { Component } from "react"
-import styled from "styled-components"
+import { Component } from "react";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const ContainerBar = styled.div`
     display: flex;
@@ -51,11 +52,11 @@ class NavBar extends Component {
         return (
             <ContainerBar theme={theme}>
                 <PageTitle theme={theme}>Linus Thorsell</PageTitle>
-                <div>
-                <ButtonNavigation theme={theme}>Home</ButtonNavigation>
-                <ButtonNavigation theme={theme}>Blog</ButtonNavigation>
-                <ButtonNavigation theme={theme}>CV</ButtonNavigation>
-                </div>
+                <nav>
+                <Link to='/'><ButtonNavigation theme={theme}>Home</ButtonNavigation></Link>
+                <Link to='/blog'><ButtonNavigation theme={theme}>Blog</ButtonNavigation></Link>
+                <Link to='/cv'><ButtonNavigation theme={theme}>CV</ButtonNavigation></Link>
+                </nav>
             </ContainerBar>
         )
     }

@@ -1,11 +1,16 @@
-// import logo from './logo.svg';
-// import './App.css';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import Blog from './Blog';
 import NavBar from './NavBar';
 import Footer from './Footer';
 import Home from './Home';
+import Cv from './Cv';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+const GlobalStyle = createGlobalStyle`
+  body {
+    background-color: ${props => props.Theme.background};
+  }
+`
 const ContainerApp = styled.div`
   background-color: ${props => props.Theme.background};
   width: 100%;
@@ -29,12 +34,20 @@ const Theme = {
 function App() {
 
   return (
+    <>
+    <GlobalStyle Theme={Theme}/>
     <ContainerApp Theme={Theme} className="App">
+      <BrowserRouter>
       <NavBar Theme={Theme} />
-      {/* <Blog Theme={Theme} /> */}
-      <Home Theme={Theme} />
+        <Routes>
+          <Route path="/" element={<Home Theme={Theme} />} />
+          <Route path="/blog" element={<Blog Theme={Theme} />} />
+          <Route path="/cv" element={<Cv Theme={Theme} />} />
+        </Routes>
+      </BrowserRouter>
       <Footer Theme={Theme} />
     </ContainerApp>
+    </>
   );
 }
 

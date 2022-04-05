@@ -2,15 +2,15 @@ import { Component } from "react"
 import styled from "styled-components"
 
 const ContainerFoot = styled.div`
-    height: 2em;
+    height: 2.5em;
     width: 100%;
     background-color: ${props => props.theme.darker_background};
-    text-align: left;
     padding: 0;
-    margin-top:auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    bottom: 0;
+    position: fixed;
 `
 const TextFooter = styled.h1`
     padding: 0.2em;
