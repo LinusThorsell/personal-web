@@ -99,7 +99,7 @@ class Blog extends Component {
 
       let BlogPostPreview = [
       {
-        title: "Tetris Game",
+        title: "BLOG PAGE IN PROGRESS",
         categories: ['Team Project', '8bit', 'Assembler', 'Hardware Integration', 'Open Source', 'Written Paper Available'],
         main_image: "https://i.imgur.com/ZNkLKWP.png",
         buttons: [
@@ -108,88 +108,6 @@ class Blog extends Component {
                 {Label: 'Writeup', Link: 'https://github.com/LinusThorsell/8-bit-tetris-asm'},                
               ],
       },
-      {
-        title: "Personal Website",
-        categories: ['Personal Project', 'ReactJS', 'styled-components', 'Firebase Database', 'Firebase Hosting', 'Open Source'],
-        main_image: "https://i.imgur.com/ZNkLKWP.png",
-        buttons: [
-          {Label: 'Read More...', Link: 'https://github.com/LinusThorsell/8-bit-tetris-asm'}, 
-          {Label: 'Source Code', Link: 'https://github.com/LinusThorsell/8-bit-tetris-asm'},
-        ],
-      },
-      {
-        title: "Personal Website",
-        categories: ['Personal Project', 'ReactJS', 'styled-components', 'Firebase Database', 'Firebase Hosting', 'Open Source'],
-        main_image: "https://i.imgur.com/ZNkLKWP.png",
-        buttons: [
-          {Label: 'Read More...', Link: 'https://github.com/LinusThorsell/8-bit-tetris-asm'}, 
-          {Label: 'Source Code', Link: 'https://github.com/LinusThorsell/8-bit-tetris-asm'},
-        ],
-      },
-      {
-        title: "Personal Website",
-        categories: ['Personal Project', 'ReactJS', 'styled-components', 'Firebase Database', 'Firebase Hosting', 'Open Source'],
-        main_image: "https://i.imgur.com/ZNkLKWP.png",
-        buttons: [
-          {Label: 'Read More...', Link: 'https://github.com/LinusThorsell/8-bit-tetris-asm'}, 
-          {Label: 'Source Code', Link: 'https://github.com/LinusThorsell/8-bit-tetris-asm'},
-        ],
-      },
-      {
-        title: "Personal Website",
-        categories: ['Personal Project', 'ReactJS', 'styled-components', 'Firebase Database', 'Firebase Hosting', 'Open Source'],
-        main_image: "https://i.imgur.com/ZNkLKWP.png",
-        buttons: [
-          {Label: 'Read More...', Link: 'https://github.com/LinusThorsell/8-bit-tetris-asm'}, 
-          {Label: 'Source Code', Link: 'https://github.com/LinusThorsell/8-bit-tetris-asm'},
-        ],
-      },
-      {
-        title: "Personal Website",
-        categories: ['Personal Project', 'ReactJS', 'styled-components', 'Firebase Database', 'Firebase Hosting', 'Open Source'],
-        main_image: "https://i.imgur.com/ZNkLKWP.png",
-        buttons: [
-          {Label: 'Read More...', Link: 'https://github.com/LinusThorsell/8-bit-tetris-asm'}, 
-          {Label: 'Source Code', Link: 'https://github.com/LinusThorsell/8-bit-tetris-asm'},
-        ],
-      },
-      {
-        title: "Personal Website",
-        categories: ['Personal Project', 'ReactJS', 'styled-components', 'Firebase Database', 'Firebase Hosting', 'Open Source'],
-        main_image: "https://i.imgur.com/ZNkLKWP.png",
-        buttons: [
-          {Label: 'Read More...', Link: 'https://github.com/LinusThorsell/8-bit-tetris-asm'}, 
-          {Label: 'Source Code', Link: 'https://github.com/LinusThorsell/8-bit-tetris-asm'},
-        ],
-      },
-      {
-        title: "Personal Website",
-        categories: ['Personal Project', 'ReactJS', 'styled-components', 'Firebase Database', 'Firebase Hosting', 'Open Source'],
-        main_image: "https://i.imgur.com/ZNkLKWP.png",
-        buttons: [
-          {Label: 'Read More...', Link: 'https://github.com/LinusThorsell/8-bit-tetris-asm'}, 
-          {Label: 'Source Code', Link: 'https://github.com/LinusThorsell/8-bit-tetris-asm'},
-        ],
-      },
-      {
-        title: "Personal Website",
-        categories: ['Personal Project', 'ReactJS', 'styled-components', 'Firebase Database', 'Firebase Hosting', 'Open Source'],
-        main_image: "https://i.imgur.com/ZNkLKWP.png",
-        buttons: [
-          {Label: 'Read More...', Link: 'https://github.com/LinusThorsell/8-bit-tetris-asm'}, 
-          {Label: 'Source Code', Link: 'https://github.com/LinusThorsell/8-bit-tetris-asm'},
-        ],
-      },
-      {
-        title: "Personal Website",
-        categories: ['Personal Project', 'ReactJS', 'styled-components', 'Firebase Database', 'Firebase Hosting', 'Open Source'],
-        main_image: "https://i.imgur.com/ZNkLKWP.png",
-        buttons: [
-          {Label: 'Read More...', Link: 'https://github.com/LinusThorsell/8-bit-tetris-asm'}, 
-          {Label: 'Source Code', Link: 'https://github.com/LinusThorsell/8-bit-tetris-asm'},
-        ],
-      },
-
     ]
 
 
