@@ -15,12 +15,13 @@ Deployed at [linusthorsell.com](https://linusthorsell.com) and [linusthorsell.se
 * react-router
 * styled-components
 ### Middle-end
-* GitHub Actions
+* GitHub Actions (for deployment)
 * Google Analytics
-* marked
+* react-markdown (blog formatting.)
 ### Back-end
-* GitHub (hosting blog posts [here](to_be_defined))
 * Firebase Hosting
+* Firebase Firestore (blog posts.)
+* Firebase Storage (images and such resources.)
 
 ***
 
