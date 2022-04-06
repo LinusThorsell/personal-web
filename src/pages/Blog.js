@@ -75,7 +75,7 @@ const Time = styled.h2`
 
 const BlogImage = styled.img`
   width: 10em;
-  height: fit-content;
+  height: 10em;
   border-radius: 1em;
   padding-right: 0.3em;
 `
