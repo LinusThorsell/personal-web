@@ -1,9 +1,10 @@
 import styled, { createGlobalStyle } from 'styled-components';
-import Blog from './Blog';
-import NavBar from './NavBar';
-import Footer from './Footer';
-import Home from './Home';
-import Cv from './Cv';
+import BlogPost from './pages/BlogPost';
+import Blog from './pages/Blog';
+import NavBar from './pages/NavBar';
+import Footer from './pages/Footer';
+import Home from './pages/Home';
+import Cv from './pages/Cv';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const GlobalStyle = createGlobalStyle`
@@ -32,7 +33,6 @@ const Theme = {
 }
 
 function App() {
-
   return (
     <>
     <GlobalStyle Theme={Theme}/>
@@ -43,6 +43,7 @@ function App() {
           <Route path="/" element={<Home Theme={Theme} />} />
           <Route path="/blog" element={<Blog Theme={Theme} />} />
           <Route path="/cv" element={<Cv Theme={Theme} />} />
+          <Route path="/blogpost" element={<BlogPost Theme={Theme} />} />
         </Routes>
       </BrowserRouter>
       <Footer Theme={Theme} />

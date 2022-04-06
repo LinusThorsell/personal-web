@@ -1,5 +1,7 @@
-import { Component } from "react"
+import { useState, useEffect } from "react"
 import styled from "styled-components"
+import * as Firestore from '../firebase.js'
+import { Link } from 'react-router-dom'
 
 const ContainerBlog = styled.div`
   width: 100%;
@@ -55,6 +57,22 @@ const BlogUnderline = styled.h2`
   a:hover {
   }
 `
+
+const Time = styled.h2`
+  color: ${props => props.theme.secondary_text};
+  margin: 0;
+  font-size: 0.8em;
+  padding-bottom: 1vh;
+  padding-left: 0.85em;
+  text-align: left;
+  
+  a {
+    color: black;
+  }
+  a:hover {
+  }
+`
+
 const BlogImage = styled.img`
   width: 10em;
   height: fit-content;
@@ -91,47 +109,59 @@ const ContainerButton = styled.div`
   margin-left: 0.5em;
 `
 
-class Blog extends Component {
-  render()
-    {
+const Blog = (props) => {
       
-      const theme = this.props.Theme;
+    const theme = props.Theme;
 
-      let BlogPostPreview = [
+    let BlogPostPreview = []
+    
+    const [blogPostIndex, setBlogPostIndex] = useState(null)
+
+    useEffect(() => {
+      if (!blogPostIndex)
       {
-        title: "BLOG PAGE IN PROGRESS",
-        categories: ['Team Project', '8bit', 'Assembler', 'Hardware Integration', 'Open Source', 'Written Paper Available'],
-        main_image: "https://i.imgur.com/ZNkLKWP.png",
-        buttons: [
-                {Label: 'Read More...', Link: 'https://github.com/LinusThorsell/8-bit-tetris-asm'}, 
-                {Label: 'Source Code', Link: 'https://github.com/LinusThorsell/8-bit-tetris-asm'},
-                {Label: 'Writeup', Link: 'https://github.com/LinusThorsell/8-bit-tetris-asm'},                
-              ],
-      },
-    ]
+        Firestore.getBlogIndex('blogposts').then(bp => {
+          setBlogPostIndex(bp)
+        })
+      }
+    }, [blogPostIndex, setBlogPostIndex]);
 
-
-        return (
-            <ContainerBlog theme={theme}>
-              {BlogPostPreview.map(data => (
-                <BlogPost theme={theme}>
-                <ContainerImgTags>
-                <div>
-                <div>
-                <BlogTitle theme={theme}> {data.title} </BlogTitle> 
-                <BlogUnderline theme={theme}>{data.categories.map(category => (<>{category}, </>))} </BlogUnderline> 
-                </div>
-                <ContainerButton>
-                {data.buttons.map(button => (<><a target="_blank" rel="noreferrer" href={button.Link}><BlogButton theme={theme}> {button.Label} </BlogButton></a></>))}
-                </ContainerButton>
-                </div>
-                <BlogImage src={data.main_image} />
-                </ContainerImgTags>
-              </BlogPost>  
-              ))}
-          </ ContainerBlog>
-        )
+    if (!blogPostIndex) // If we have not fetched data yet
+    {
+      return (<>Loading...</>)
     }
+    
+    blogPostIndex.forEach(element => {
+      BlogPostPreview.push({
+        title: element.title,
+        date: new Date(element.date.seconds*1000),
+        description: element.description,
+        preview_image: element.preview_image,
+        button: {Label: 'Read post...', Link: '/blogpost?p=' + element.id},          
+      });
+    });
+
+    return (
+        <ContainerBlog theme={theme}>
+          {BlogPostPreview.map(data => (
+            <BlogPost theme={theme} key={data.title}>
+            <ContainerImgTags>
+            <div>
+            <div>
+            <BlogTitle theme={theme}> {data.title} </BlogTitle> 
+            <Time theme={theme}> {data.date.toDateString()} </Time> 
+            <BlogUnderline theme={theme}> {data.description} </BlogUnderline> 
+            </div>
+            <ContainerButton>
+            <Link to={data.button.Link}><BlogButton theme={theme}> {data.button.Label} </BlogButton></Link>
+            </ContainerButton>
+            </div>
+            <BlogImage src={data.preview_image} />
+            </ContainerImgTags>
+          </BlogPost>  
+          ))}
+      </ ContainerBlog>
+    )
 }
 
 export default Blog;

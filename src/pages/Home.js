@@ -1,5 +1,6 @@
 import { Component } from "react"
 import styled from "styled-components"
+import { Link } from "react-router-dom"
 
 const ContainerHome = styled.div`
     width: 100%;
@@ -81,9 +82,9 @@ class Home extends Component {
                 </div>
                 </AlignItemsSideBySideDiv>
                 <AlignItemsSideBySideDiv>
-                    <NavButton theme={theme}>GitHub</NavButton>
-                    <NavButton theme={theme}>Blog</NavButton>
-                    <NavButton theme={theme}>CV</NavButton>
+                    <a href='https://github.com/LinusThorsell' target="_blank" rel="noreferrer"><NavButton theme={theme}>GitHub</NavButton></a>
+                    <Link to='/blog'><NavButton theme={theme}>Blog</NavButton></Link>
+                    <Link to='/cv'><NavButton theme={theme}>CV</NavButton></Link>
                 </AlignItemsSideBySideDiv>
                 </div>
 

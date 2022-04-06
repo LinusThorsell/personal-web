@@ -27,7 +27,7 @@ class Footer extends Component {
         return (
             <ContainerFoot theme={theme}>
                 <TextFooter theme={theme}>
-                    Copyright text and stuff like that. Placeholder Inc.
+                    Designed, deployed and maintained by Linus Thorsell
                 </TextFooter>
             </ContainerFoot>
         )
