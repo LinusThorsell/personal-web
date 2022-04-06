@@ -57,7 +57,7 @@ class Cv extends Component {
             <SideBySideContainer theme={theme}>
                 <SideDivs>
                     <CategoryTitle>Work Experience</CategoryTitle>
-                    <CategorySection>Siemens 2017</CategorySection>
+                    <CategorySection>Siemens 2019</CategorySection>
                     <UnderCategorySection>Summer Work Frontend Internal Website Development</UnderCategorySection>
                     <UnderCategoryHighlight>Aquired Skills:</UnderCategoryHighlight>
                     <Ul>
@@ -67,9 +67,9 @@ class Cv extends Component {
                     </Ul>
 
                     <CategoryTitle>Education</CategoryTitle>
-                    <CategorySection>Curt Nicolin Gymnasiet 2017-2019</CategorySection>
+                    <CategorySection>Curt Nicolin Gymnasiet 2017-2020</CategorySection>
                     <UnderCategorySection>Computer Science, Engineering & Design</UnderCategorySection>
-                    <CategorySection>Linköping University 2019-Present</CategorySection>
+                    <CategorySection>Linköping University 2020-Present</CategorySection>
                     <UnderCategorySection>Bachelor of Science in Engineering and Bachelor of Science</UnderCategorySection>
 
                     <CategoryTitle>Soft Skills</CategoryTitle>
@@ -86,15 +86,15 @@ class Cv extends Component {
                 </SideDivs>
                 <SideDivs>
                     <CategoryTitle>Personal Projects</CategoryTitle>
-                    <CategorySection>Personal Website - <A href="https://github.com/linusthorsell/">Source Code</A></CategorySection>
+                    <CategorySection>Personal Website - <A href="https://github.com/linusthorsell/personal-web">Source Code</A></CategorySection>
                     <UnderCategorySection>Website to host my Technological Blog & my CV</UnderCategorySection>
                     <UnderCategoryHighlight>Aquired Skills:</UnderCategoryHighlight>
                     <Ul>
-                        <Li>ReactJS, React-Router, Styled-Components, Firebase Hosting, Firebase Database</Li>
+                        <Li>ReactJS, React-Router, Styled-Components, react-markdown, Firebase Hosting, Firebase Storage, Firebase Firestore</Li>
                         <Li>UI/UX Design, Mobile first development, Colorblind friendly design.</Li>
                     </Ul>
 
-                    <CategorySection>Tetris in Assembler - <A href="https://github.com/linusthorsell/">Source Code</A></CategorySection>
+                    <CategorySection>Tetris in Assembler - <A href="https://github.com/linusthorsell/8-bit-tetris-asm">Source Code</A></CategorySection>
                     <UnderCategorySection>Duo project to rebuild classical Tetris on custom hardware.</UnderCategorySection>
                     <UnderCategoryHighlight>Aquired Skills:</UnderCategoryHighlight>
                     <Ul>
@@ -104,14 +104,14 @@ class Cv extends Component {
                         <Li>Resource management and planning on critically low resource systems.</Li>
                     </Ul>
 
-                    <CategorySection>Social Media Clone - <A href="https://github.com/linusthorsell/">Source Code</A></CategorySection>
+                    {/* <CategorySection>Social Media Clone - <A href="https://github.com/linusthorsell/">Source Code</A></CategorySection>
                     <UnderCategorySection>SocialXetone - Like twitter but not really.</UnderCategorySection>
                     <UnderCategoryHighlight>Aquired Skills:</UnderCategoryHighlight>
                     <Ul>
                         <Li>My first 'large' scale ReactJS project.</Li>
                         <Li>Followed industry 'best' practices for ReactJS.</Li>
                         <Li>Backend is integrated with the Firebase Cloud system.</Li>
-                    </Ul>
+                    </Ul> */}
                     <br></br>
                     <br></br>
                     <br></br>
