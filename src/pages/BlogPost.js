@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
+import { listAll, getDownloadURL } from 'firebase/storage'
 import styled from "styled-components"
 import Marked from 'react-markdown'
-import * as Firestore from '../firebase.js';
+import { storage, getRef } from '../firebase.js';
 import { useLocation, Link } from 'react-router-dom';
 import rehypeHighlight from 'rehype-highlight'
+import remarkgfm from 'remark-gfm'
 // import hljs from 'highlight.js'
 import "highlight.js/styles/github-dark.css";
-
-// import testing from './blog_posts/testing_050422.js'
+import axios from 'axios'
 
 const BlogContainer = styled.div`
 	height: 100%;
@@ -23,10 +24,28 @@ const BlogContainer = styled.div`
 	a {
 		color: gray;
 	}
+
+    table {
+        border: 1px solid gray;
+        border-collapse: collapse;
+    }
+    th,tr {
+        border: 1px solid gray;
+        text-align: left;
+        padding: 0.5em;
+    }
+    td {
+        border: 1px solid gray;
+        padding: 0.5em;
+    }
 `
 
 const BlogPost = (props) => {
+    console.log("Loadeli-doo")
 
+    const [error, setError] = useState(null)
+    const [markdown, setMarkdown] = useState('Loading...')
+    
 	function useQuery() {
 		const { search } = useLocation();
 	
@@ -34,24 +53,25 @@ const BlogPost = (props) => {
 	}
 	
 	let query = useQuery().get('p');
+    
+    if (error == null) {
+        var storageRef = getRef("blogposts/" + query + ".md")
+        downloadMarkdown(storageRef)
+    }
 
-	// console.log("Drawing: " + query);
+    function downloadMarkdown(ref_to_markdown) {
+        getDownloadURL(ref_to_markdown).then(function(url) {
+            axios.get(url).then((response) => {
+                setMarkdown(response.data)
+            })
+        }).catch(function(error) {
+            // Handle any errors
+            console.log("error: could not find blogpost: " + query)
+            setError(error)
+        });
+    }
 
-	const [blogPost, setBlogPost] = useState('');
-
-	useEffect(() => {
-		if (!blogPost)
-		{
-			Firestore.getBlogPost(query).then(bp => {
-				setBlogPost(bp.data())
-			})
-		}
-	}, [query, blogPost, setBlogPost]);
-	
-	var to_draw = 'loading...'
-	if (blogPost) {to_draw = blogPost.content}
-
-	if (blogPost == null)
+	if (error != null)
 	{
 		return (<>
 		<BlogContainer>
@@ -65,7 +85,7 @@ const BlogPost = (props) => {
 		<>
 		<BlogContainer>
 			{/* {console.log(blogPost.content)} */}
-			<Marked rehypePlugins={[rehypeHighlight]} children={to_draw.replaceAll('+++', '  \n')} />
+			<Marked rehypePlugins={[rehypeHighlight]} remarkPlugins={[remarkgfm]} children={markdown.substring(markdown.indexOf('\n') + 1)} />
 		</BlogContainer>
 		</>
 	)

@@ -1,11 +1,12 @@
 import { initializeApp } from "firebase/app";
-import { 
+import { getStorage, ref, listAll } from 'firebase/storage'
+/*import { 
     getFirestore,
     getDoc, 
     doc,
     getDocs,
     collection
-} from "firebase/firestore";
+} from "firebase/firestore";*/
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -21,21 +22,10 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const firebaseApp = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(firebase);
-const db = getFirestore(firebaseApp);
+const storage = getStorage()
 
-// TODO 'cache' data locally in app to remove loading times
-// for blog and blogposts
+export const getRef = (query_ref) => {
+    return ref(storage, query_ref)
+}
 
-export const getBlogPost = (blogpost) => {
-    const blogPostRef = doc(db, 'blogposts', blogpost)
-    return getDoc(blogPostRef);
-};
-
-export const getBlogIndex = async (coll_id) => {
-    const blogSnapshot = await getDocs(collection(db, coll_id));
-    const blogList= blogSnapshot.docs.map((doc) => doc.data());
-    return blogList;
-};
-
-export default db;
+export {storage};
