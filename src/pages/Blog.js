@@ -34,15 +34,17 @@ const BlogPost = styled.div`
   height: fit-content;
   text-align: center;
   margin: 0.5em;
-  padding-top: 0.3em;
-  padding-bottom: 0.3em;
-  border-radius: 1em;
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  border-radius: 0.8em;
+  padding-left: 1em;
+  padding-right: 1em;
   max-width: 35em;
 `
 const BlogTitle = styled.h1`
   color: ${props => props.theme.primary_text};;
   margin: 0;
-  padding-left: 0.3em;
+  margin-bottom: 0.3em;
   text-align: left;
   font-size: 2em;
 `
@@ -80,17 +82,17 @@ const BlogImage = styled.img`
   width: 10em;
   height: 10em;
   border-radius: 1em;
-  padding-right: 0.3em;
+  margin-left: 1em;
 `
 const BlogButton = styled.button`
   float: left;
   width: fit-content;
   height: fit-content;
   cursor: pointer;
-  background-color: ${props => props.theme.foreground};
+  background-color: rgba(40, 40, 40, 255);
   color: ${props => props.theme.primary_text};
   border: 0;
-  border-radius 1em;
+  border-radius 0.6em;
   margin-left: 0.1em;
   margin-right: 0.1em;
   font-size: 1em;

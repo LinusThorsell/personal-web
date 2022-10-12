@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import { listAll, getDownloadURL } from 'firebase/storage'
+import React, { useState } from 'react'
+import { getDownloadURL } from 'firebase/storage'
 import styled from "styled-components"
 import Marked from 'react-markdown'
-import { storage, getRef } from '../firebase.js';
+import { getRef } from '../firebase.js';
 import { useLocation, Link } from 'react-router-dom';
 import rehypeHighlight from 'rehype-highlight'
 import remarkgfm from 'remark-gfm'
@@ -37,6 +37,11 @@ const BlogContainer = styled.div`
     td {
         border: 1px solid gray;
         padding: 0.5em;
+    }
+    img {
+        max-width: 30em;
+        width: 100%;
+        height: auto;
     }
 `
 
