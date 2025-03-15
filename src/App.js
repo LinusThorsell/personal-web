@@ -2,7 +2,6 @@ import styled, { createGlobalStyle } from 'styled-components';
 import BlogPost from './pages/BlogPost';
 import Blog from './pages/Blog';
 import NavBar from './pages/NavBar';
-import Footer from './pages/Footer';
 import Home from './pages/Home';
 import Cv from './pages/Cv';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -46,7 +45,6 @@ function App() {
           <Route path="/blogpost" element={<BlogPost Theme={Theme} />} />
         </Routes>
       </BrowserRouter>
-      <Footer Theme={Theme} />
     </ContainerApp>
     </>
   );
